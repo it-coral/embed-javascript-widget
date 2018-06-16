@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Test Embed Javascript</title>
+	</head>
+	<body>
+		<div id="audio_element_id"></div>
+	</body>
+	<script>
+		(function (window, document) {
+        var loader = function () {
+            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+            // script.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'example.js/widget.min.js';
+            script.src = '/dist/widget.min.js';
+            script.id = 'embed_script_id';
+            window.audio_config = {
+            	'element_id': 'audio_element_id',
+            	'url': 'http://www.mocky.io/v2/5b257193310000d00f6a722c'
+            };
+            tag.parentNode.insertBefore(script, tag);
+        };
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+    })(window, document);
+	</script>
+</html>
